@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <h1>Детали бага {{ bugreport_id }}</h1>
+<p>
+    Status: {{ bugreport.status }} <br>
+    Priority: {{ bugreport.priority }}<br>
+    Description: {{ bugreport.description }}<br>
+    Task: {{ bugreport.task }}<br>
+    Project: {{ bugreport.project.name }}
+</p>
+<p><a href="{% url 'quality_control:bugreport_update' bugreport.id %}">Изменить отчет</a></p>
+<p><a href="{% url 'quality_control:bugreport_delete' bugreport.id %}"onclick="return confirm('Вы уверены, что хотите удалить этот отчет');">Удалить отчет</a></p>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <h1>Cписок отчетов об ошибках</h1>
+    <p><a href="{% url 'quality_control:bugreport_create' %}">Создать новый отчет об ошибкe</a></p>
+    <ul>
+        {% for bugreport in bugreport_list %}
+            <p>Title: {{ bugreport.title }}-Status: {{ bugreport.status }}-<a href="{% url 'quality_control:bugreport_detail' bugreport.id %}">Details</a></p>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
