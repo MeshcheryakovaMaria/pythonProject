@@ -1,3 +1,5 @@
+
+
 #Class-Based Views
 from django.views.generic import ListView, DetailView
 from django.views.generic.base import TemplateView
@@ -9,8 +11,6 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.shortcuts import render, get_object_or_404
 
-
-#
 # class IndexView(TemplateView):
 #     template_name = 'quality_control/index.html'
 #
@@ -77,7 +77,6 @@ from django.shortcuts import render, get_object_or_404
 
 
 #Function-Based Views
-
 def index(request):
     return render(request, 'quality_control/index.html')
 
